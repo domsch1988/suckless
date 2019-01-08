@@ -1,0 +1,4 @@
+compton &
+slstatus &
+setxkbmap -option caps:hyper &
+nitrogen --restore
