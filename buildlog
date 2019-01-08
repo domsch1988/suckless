@@ -1,0 +1,146 @@
+make: Verzeichnis „/home/dominik/suckless/dwm“ wird betreten
+rm -f dwm drw.o dwm.o util.o dwm-6.1.tar.gz
+dwm build options:
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION="6.1" -DXINERAMA
+LDFLAGS  = -L/usr/X11R6/lib -lX11 -lXinerama -lfontconfig -lXft
+CC       = cc
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.1\" -DXINERAMA drw.c
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.1\" -DXINERAMA dwm.c
+dwm.c: In Funktion »drawbar«:
+dwm.c:705:7: Warnung: Variable »ctmp« wird nicht verwendet [-Wunused-variable]
+  char ctmp;
+       ^~~~
+dwm.c:704:6: Warnung: Variable »tx« wird nicht verwendet [-Wunused-variable]
+  int tx = 0;
+      ^~
+dwm.c:703:8: Warnung: Variable »tp« wird nicht verwendet [-Wunused-variable]
+  char *tp = stext;
+        ^~
+dwm.c:702:8: Warnung: Variable »ts« wird nicht verwendet [-Wunused-variable]
+  char *ts = stext;
+        ^~
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.1\" -DXINERAMA util.c
+cc -o dwm drw.o dwm.o util.o -L/usr/X11R6/lib -lX11 -lXinerama -lfontconfig -lXft
+mkdir -p /home/dominik/.local/bin
+cp -f dwm /home/dominik/.local/bin
+chmod 755 /home/dominik/.local/bin/dwm
+mkdir -p /home/dominik/.local/share/man/man1
+sed "s/VERSION/6.1/g" < dwm.1 > /home/dominik/.local/share/man/man1/dwm.1
+chmod 644 /home/dominik/.local/share/man/man1/dwm.1
+make: Verzeichnis „/home/dominik/suckless/dwm“ wird verlassen
+make: Ungültige Option -- D
+Aufruf: make [Optionen] [Ziele] ...
+Optionen:
+  -b, -m                      Wird aus Kompatibilitätsgründen ignoriert
+  -B, --always-make           Alle Ziele ohne Bedingungen erstellen
+  -C VERZEICHNIS, --directory=VERZEICHNIS
+                              In VERZEICHNIS wechseln, bevor etwas getan wird
+  -d                          Viele Informationen zur Fehlersuche ausgeben.
+  --debug[=KENNUNGEN]         Verschiedene Arten von Debug-Information ausgeben
+  -e, --environment-overrides
+                              Umgebungsvariablen überschreiben „make“-Steuerdateien
+  --eval=ZEIENKETTE           ZEICHENKETTE wie einen Makedatei-Eintrag auswerten.
+  -f DATEI, --file=DATEI, --makefile=DATEI
+                              DATEI als Makefile lesen
+  -h, --help                  Diese Meldung ausgeben und beenden
+  -i, --ignore-errors         Fehler in Regeln werden irgnoriert
+  -I VERZEICHNIS, --include-dir=VERZEICHNIS
+                              VERZEICHNIS nach eingebundenen
+                              Makedateien durchsuchen
+  -j [N], --jobs[=N]          N Jobs gleichzeitig erlauben; unbegrenzte Anzahl 
+                              von Jobs ohne Argument
+  -k, --keep-going            Weiterlaufen, auch wenn einige Targets nicht
+                              erzeugt werden konnten
+  -l [N], --load-average[=N], --max-load[=N]
+                              Keine Jobs starten bevor die Auslastung nicht unter N ist.
+  -L, --check-symlink-times   Den neueste Modifizierungszeit zwischen
+                              symbolischer Verküpfung und dem Ziel verwenden.
+  -n, --just-print, --dry-run, --recon
+                              Keine Regel ausführen, nur ausgeben.
+  -o DATEI, --old-file=DATEI, --assume-old=DATEI
+                              DATEI als sehr alt ansehen und nicht neu erzeugen.
+  -O[TYP], --output-sync[=TYP]
+                              Synchronisiert die Ausgabe paralleler Jobs per TYP.
+  -p, --print-data-base       Die interne Datenbank von „make“ ausgeben
+  -q, --question              Keine Regel ausführen; der Exit-Status gibt an, ob die Dateien
+                              aktuell sind
+  -r, --no-builtin-rules      Die eingebauten impliziten Regeln deaktivieren.
+  -R, --no-builtin-variables  Die eingebauten Variablenbelegungen deaktivieren.
+  -s, --silent, --quiet       Regeln nicht ausgeben.
+  -S, --no-keep-going, --stop
+                              -k abschalten.
+  -t, --touch                 Die Ziele werden nur als aktualisiert markiert,
+                              nicht tatsächlich erneuert
+  --trace                     Viele Informationen zur Fehlersuche ausgeben
+  -v, --version               Die Versionsnummer von „make“ ausgeben und Programm beenden
+  -w, --print-directory       Das aktuelle Verzeichnis ausgeben
+  --no-print-directory        -w abschalten, selbst wenn es implizit eingeschaltet wurde.
+  -W DATEI, --what-if=DATEI, --new-file=DATEI, --assume-new=DATEI
+                              DATEI als unendlich neu erachten.
+  --warn-undefined-variables  Eine Warnung ausgeben, wenn eine undefinierte
+                                     Variable referenziert wird.
+
+Diese Programm wurde für x86_64-pc-linux-gnu gebaut
+Fehlermeldungen (auf Englisch) an <bug-make@gnu.org> senden.
+make: Verzeichnis „/home/dominik/suckless/slstatus“ wird betreten
+rm -f slstatus slstatus.o components/battery.o components/cpu.o components/datetime.o components/disk.o components/entropy.o components/hostname.o components/ip.o components/kernel_release.o components/keyboard_indicators.o components/keymap.o components/load_avg.o components/netspeeds.o components/num_files.o components/ram.o components/run_command.o components/swap.o components/temperature.o components/uptime.o components/user.o components/volume.o components/wifi.o util.o
+cc -o slstatus.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os slstatus.c
+In file included from slstatus.c:24:
+config.h:64:2: Warnung: fehlende Initialisierung für Feld »args« von »const struct arg« fehlt [-Wmissing-field-initializers]
+  {cpu_perc,  "   %s  ",  },
+  ^
+slstatus.c:17:14: Anmerkung: »args« ist hier deklariert
+  const char *args;
+              ^~~~
+In file included from slstatus.c:24:
+config.h:65:2: Warnung: fehlende Initialisierung für Feld »args« von »const struct arg« fehlt [-Wmissing-field-initializers]
+  {ram_perc,  "   %s  ",             },
+  ^
+slstatus.c:17:14: Anmerkung: »args« ist hier deklariert
+  const char *args;
+              ^~~~
+cc -o components/battery.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/battery.c
+cc -o components/cpu.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/cpu.c
+cc -o components/datetime.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/datetime.c
+cc -o components/disk.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/disk.c
+cc -o components/entropy.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/entropy.c
+cc -o components/hostname.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/hostname.c
+cc -o components/ip.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/ip.c
+cc -o components/kernel_release.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/kernel_release.c
+cc -o components/keyboard_indicators.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/keyboard_indicators.c
+cc -o components/keymap.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/keymap.c
+cc -o components/load_avg.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/load_avg.c
+cc -o components/netspeeds.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/netspeeds.c
+cc -o components/num_files.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/num_files.c
+cc -o components/ram.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/ram.c
+cc -o components/run_command.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/run_command.c
+cc -o components/swap.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/swap.c
+cc -o components/temperature.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/temperature.c
+cc -o components/uptime.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/uptime.c
+cc -o components/user.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/user.c
+cc -o components/volume.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/volume.c
+cc -o components/wifi.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os components/wifi.c
+cc -o util.o -c -I/usr/X11R6/include -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wextra -Os util.c
+cc -o slstatus -L/usr/X11R6/lib -s components/battery.o components/cpu.o components/datetime.o components/disk.o components/entropy.o components/hostname.o components/ip.o components/kernel_release.o components/keyboard_indicators.o components/keymap.o components/load_avg.o components/netspeeds.o components/num_files.o components/ram.o components/run_command.o components/swap.o components/temperature.o components/uptime.o components/user.o components/volume.o components/wifi.o util.o slstatus.o -lX11
+mkdir -p "/home/dominik/.local/bin"
+cp -f slstatus "/home/dominik/.local/bin"
+chmod 755 "/home/dominik/.local/bin/slstatus"
+mkdir -p "/home/dominik/.local/share/man/man1"
+cp -f slstatus.1 "/home/dominik/.local/share/man/man1"
+chmod 644 "/home/dominik/.local/share/man/man1/slstatus.1"
+make: Verzeichnis „/home/dominik/suckless/slstatus“ wird verlassen
+make: Verzeichnis „/home/dominik/suckless/st“ wird betreten
+rm -f st st.o x.o st-0.8.1.tar.gz
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.1\" -D_XOPEN_SOURCE=600 -O -c st.c
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.1\" -D_XOPEN_SOURCE=600 -O -c x.c
+c99 -o st st.o x.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  `pkg-config --libs fontconfig`  `pkg-config --libs freetype2` 
+mkdir -p /home/dominik/.local/bin
+cp -f st /home/dominik/.local/bin
+chmod 755 /home/dominik/.local/bin/st
+mkdir -p /home/dominik/.local/share/man/man1
+sed "s/VERSION/0.8.1/g" < st.1 > /home/dominik/.local/share/man/man1/st.1
+chmod 644 /home/dominik/.local/share/man/man1/st.1
+tic -sx st.info
+4 entries written to /home/dominik/.terminfo
+Please see the README file regarding the terminfo entry of st.
+make: Verzeichnis „/home/dominik/suckless/st“ wird verlassen

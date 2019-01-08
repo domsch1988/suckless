@@ -1,0 +1,15 @@
+make: Verzeichnis „/home/dominik/suckless/st“ wird betreten
+rm -f st st.o x.o st-0.8.1.tar.gz
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.1\" -D_XOPEN_SOURCE=600 -O -c st.c
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.1\" -D_XOPEN_SOURCE=600 -O -c x.c
+c99 -o st st.o x.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  `pkg-config --libs fontconfig`  `pkg-config --libs freetype2` 
+mkdir -p /home/dominik/.local/bin
+cp -f st /home/dominik/.local/bin
+chmod 755 /home/dominik/.local/bin/st
+mkdir -p /home/dominik/.local/share/man/man1
+sed "s/VERSION/0.8.1/g" < st.1 > /home/dominik/.local/share/man/man1/st.1
+chmod 644 /home/dominik/.local/share/man/man1/st.1
+tic -sx st.info
+4 entries written to /home/dominik/.terminfo
+Please see the README file regarding the terminfo entry of st.
+make: Verzeichnis „/home/dominik/suckless/st“ wird verlassen
